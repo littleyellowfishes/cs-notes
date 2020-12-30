@@ -91,9 +91,9 @@ A term of the form (λx. M)N is called a β-redex and we say that M[N/x] is the 
 
 ​											$\frac{}{(λx.M)N →_β M[N/x]}(Redex)$
 
-$\frac{M →_β M'}{MN →_β M'N}(AppL)$			$\frac{N →_β N'}{MN →_β MN'}(AppR)$				$\frac{M →_β N}{(λx.M)N →_β λx.N}(Abs)$
+$\frac{M →_β M'}{MN →_β M'N}(AppL)$			$\frac{N →_β N'}{MN →_β MN'}(AppR)$				$\frac{M →_β N}{λx.M →_β λx.N}(Abs)$
 
-If M →*β* N then we say that N is a **reduct** of M. A term M is said to be in *β***-normal form** just if there is no term N for which M→*β*  N.
+If M $\to_\beta$ N then we say that N is a **reduct** of M. A term M is said to be in **β-normal form** just if there is no term N for which M $\to_\beta$  N.
 
 If its “*β*-reduces” then it does so in a sequence of zero or more steps. Written as M $\twoheadrightarrow_β$ N
 
@@ -107,7 +107,7 @@ $M \to_β M_1 \to_β  M_2 \to_β ... \to_\beta M_{k-1}\to_\beta M_k$
 
 ##### definition 3.4
 
-nomenclature:
+nomenclature: 
 
 - If  M $\twoheadrightarrow_β$ N then N is a **reduct** of M. If M $\ne_β$ N, then it is a **proper reduct** 
 - Term M such that M $\twoheadrightarrow$ N for some normal form N is said to **have a normal form ** or be **normalisable**
@@ -124,6 +124,8 @@ $\omega :=$ λx. xx													$\omega M \twoheadrightarrow_\beta MM$
 $\Omega := \omega\omega$														$\Omega \twoheadrightarrow_\beta \Omega$
 
 $\Theta :=$ (λxy. y(xxy))(λxy. y(xxy))					$\Theta M \twoheadrightarrow_\beta M(\Theta M)$
+
+$Y = \lambda f.(\lambda x.f(xx))(\lambda x.f(xx))$			$M(YM) =_\beta YM$
 
 **I** is called identity combinator
 
@@ -205,6 +207,10 @@ A λ-term N is said to be a **fixed point** of another λ-term M just if MN $=_\
 
 Every λ-term posesses a fixed point 
 
+Y-combinator:	$\lambda f.(\lambda x.f(xx))(\lambda x.f(xx))$
+
+$M(YM) =_\beta YM$
+
 ### 6. Induction
 
 The induction principle for $\mathcal{Λ}$
@@ -251,7 +257,7 @@ $(TyVar)  a\in \mathbb{A}\frac{}{a \in \mathbb{T}}$ 										$(Arrow)\frac{A\in
 
 • We omit the outermost parenthesis when writing types.
 
-• We assume that the arrow associates to the right: i.e. when we write $A_1$ *→* $A_2$ → $A_3$ , the type that we mean is ($T_1$ → ($A_2 \to A_3$))
+• We assume that the arrow **associates to the right**: i.e. when we write $A_1$ *→* $A_2$ → $A_3$ , the type that we mean is ($T_1$ → ($A_2 \to A_3$))
 
 The **type schemes** are pairs consisting of a finite set of type variables *a*1 , . . . , $a_m$ and a monotype A, that we write suggestively as:
 
@@ -567,3 +573,19 @@ If we consider properly labelled proofs in the implicational fragment of proposi
 ​	From a constructive of A from starting assumptions $\Gamma$, one can extract a term M such that $\Gamma \vdash M:A$
 
 ​	From each term $M$ such that $\Gamma \vdash M:A$, we can extract a constructive proof that A follows from assumptions $\Gamma$.
+
+
+
+
+
+### Prove
+
+We can conclude everything from false
+
+
+
+
+
+### Revision mistake
+
+**Week one :** outer parentheses and in subterms application associates to the left.
