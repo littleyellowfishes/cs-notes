@@ -73,7 +73,7 @@ If two terms M and N can be made identical just by changing bound variable names
 
 ##### defifinition 2.4.
 
- The set of λ-terms is the set $\mathcal{Λ}$ with all α-equivalent terms identifified.
+ The set of λ-terms is the set $\mathcal{Λ}$ with all α-equivalent terms identified.
 
 
 
@@ -93,7 +93,7 @@ A term of the form (λx. M)N is called a β-redex and we say that M[N/x] is the 
 
 $\frac{M →_β M'}{MN →_β M'N}(AppL)$			$\frac{N →_β N'}{MN →_β MN'}(AppR)$				$\frac{M →_β N}{λx.M →_β λx.N}(Abs)$
 
-If M $\to_\beta$ N then we say that N is a **reduct** of M. A term M is said to be in **β-normal form** just if there is no term N for which M $\to_\beta$  N.
+If M $\to_\beta$ N then we say that N is a **reduct** of M. A term M is said to be in *β***-normal form** just if there is no term N for which M $\to_\beta$ N.
 
 If its “*β*-reduces” then it does so in a sequence of zero or more steps. Written as M $\twoheadrightarrow_β$ N
 
@@ -107,7 +107,7 @@ $M \to_β M_1 \to_β  M_2 \to_β ... \to_\beta M_{k-1}\to_\beta M_k$
 
 ##### definition 3.4
 
-nomenclature: 
+nomenclature: 	
 
 - If  M $\twoheadrightarrow_β$ N then N is a **reduct** of M. If M $\ne_β$ N, then it is a **proper reduct** 
 - Term M such that M $\twoheadrightarrow$ N for some normal form N is said to **have a normal form ** or be **normalisable**
@@ -210,6 +210,8 @@ Every λ-term posesses a fixed point
 Y-combinator:	$\lambda f.(\lambda x.f(xx))(\lambda x.f(xx))$
 
 $M(YM) =_\beta YM$
+
+
 
 ### 6. Induction
 
@@ -379,7 +381,7 @@ Suppose M is a term, $\Gamma$ an environment ans A a type. Then:
 
 If $\Gamma \vdash M:A$ and $M \to_\beta N$ then $\Gamma \vdash N:A$
 
-##### lemma 9.2
+##### lemma 9.2  (substitution lemma)
 
 If $\Gamma$, $x:B\vdash M:A$ and $\Gamma \vdash N:B$ then $\Gamma \vdash M[N/x]:A$
 
@@ -460,6 +462,8 @@ In such a case, we define $[\![ \mathscr{C} ]\!] := [A_1/a_1,...,A_m/a_m]$.
 
 ##### definition 11.3
 
+associates to right it seems
+
 Suppose $\mathscr{C}$ is a set of type constraints. The **unification algorithm** consiss of a applying the following rules to $\mathscr{C}$ as many times as possible.
 
 (1)	$\{ A \stackrel{?}{=} A \} \uplus \mathscr{C} \Longrightarrow \mathscr{C}$
@@ -478,7 +482,9 @@ Suppose $\mathscr{C}$ is a set of type constraints and $\mathscr{D}$ is the prob
 
 ##### defintion 11.4
 
-Let $\mathscr{C}$ e a set of type constraints. Then we say that $\sigma$ is a **most general unifier(mgu)** of $\mathscr{C}$ just if:
+Let $\mathscr{C}$ be a set of type constraints. Then we say that $\sigma$ is a **most general unifier(mgu)** of $\mathscr{C}$ just if:
+
+![image-20210113225156500](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210113225156500.png)
 
 (i)	$\sigma$ is a unifier of $\mathscr{C}$
 
@@ -589,3 +595,17 @@ We can conclude everything from false
 ### Revision mistake
 
 **Week one :** outer parentheses and in subterms application associates to the left.
+
+**Week two :** case not well split
+
+**Week three ：**fucking church I fucking hate church, Dont even know how to improve
+
+**Week four :** just minor issue
+
+**Week five :** some abs case problem
+
+**Week six :** mgu form is $\sigma = [c\to c/ a, c/b]$ and type constraints associate to right. string can't properly contain itself equal to not in sloved form. principal type is the type of whole equation
+
+**Week seven :** $\forall ,\exist$ proof are different. Curry-Howard correspondence not familiar
+
+Conclusion : I FUCKING HATE CHURCH NUMERAL WTF IS THAT ?!!!??!?!? LEGIT PAST PAPER ONE 13 POINTS DEPENDS ON IT, LIKE TYPE ONLY TAKE 15 POINTS. NOT MAKING ANY SENSE AT ALLLLL
