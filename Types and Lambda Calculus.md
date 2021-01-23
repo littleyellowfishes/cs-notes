@@ -195,7 +195,7 @@ Nil$:=$ λcn.n			Cons $:=$ λxy.λcn.cx(ycn)		Sum$:=$ λxs.xs **Add** $\ulcorner
 
 ##### definition 5.1
 
-We defifine fact as the unique function on natural numbers (i.e. subset of N *×* N with the property that exactly one output number is associated with each input number) that satisfifies the equation (in parameter F):
+We define fact as the unique function on natural numbers (i.e. subset of N *×* N with the property that exactly one output number is associated with each input number) that satisfies the equation (in parameter F):
 
 ​									F(n) = if n = 0 then 1 else n · F(n - 1)
 
@@ -357,7 +357,7 @@ The term $\lambda x.xx$ is untypable.
 
 Suppose $\Gamma \vdash M :A$ (is derivable), then:
 
-- If M is a variable x, then there is a type scheme $\forall \overline{a}.B$ (with $\\overline{a}$ possibly enpty) and A = B[$\overline{C}/\overline{a}$] for some monotypes $\overline{C}$
+- If M is a variable x, then there is a type scheme $\forall \overline{a}.B$ (with $\overline{a}$ possibly enpty) and A = B[$\overline{C}/\overline{a}$] for some monotypes $\overline{C}$
 - If M is an application PQ, then there is a type B such that $\Gamma \vdash P : B \to A$ and $\Gamma \vdash Q:B$
 - If M is an abstraction $\lambda x.P$, then there are types B and C such that A = B $\to$ C, and $\Gamma$, $x:B\vdash P:C$
 
